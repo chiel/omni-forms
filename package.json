@@ -1,0 +1,10 @@
+{
+  "name": "omni-forms",
+  "version": "0.1.0-dev",
+  "author": "chielkunkels",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chielkunkels/omni-forms.git"
+  }
+}

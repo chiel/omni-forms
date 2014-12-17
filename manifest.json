@@ -1,0 +1,89 @@
+{
+	"name": "Forms",
+	"slug": "forms",
+	"unit": "form",
+	"units": "forms",
+
+	"rights": [
+		{
+			"key": "view",
+			"description": "View existing forms"
+		},
+		{
+			"key": "create",
+			"description": "Create new forms"
+		},
+		{
+			"key": "update",
+			"description": "Update existing forms"
+		},
+		{
+			"key": "delete",
+			"description": "Remove forms"
+		}
+	],
+
+	"formSpec": {
+		"method": "post",
+		"action": "/forms/new",
+		"save": {},
+		"pager": {
+			"type": "tabbed",
+			"position": "top"
+		},
+		"pages": [
+			{
+				"groups": ["group1"]
+			}
+		],
+		"groups": {
+			"group1": {
+				"fields": ["key", "fields"]
+			}
+		},
+		"fields": {
+			"key": {
+				"type": "text",
+				"label": "Key"
+			},
+			"fields": {
+				"type": "value_list",
+				"label": "Fields",
+				"order": ["label", "name", "type"],
+				"fields": {
+					"name": {
+						"type": "text",
+						"attributes": {
+							"placeholder": "Name"
+						}
+					},
+					"label": {
+						"type": "text",
+						"attributes": {
+							"placeholder": "Label"
+						}
+					},
+					"type": {
+						"type": "single_option",
+						"options": [
+							{ "label": "Text field", "value": "text" },
+							{ "label": "Textarea", "value": "textarea" }
+						],
+						"attributes": {
+							"placeholder": "Field type"
+						}
+					}
+				}
+			}
+		}
+	},
+
+	"listSpec": {
+		"fields": [
+			{
+				"name": "key",
+				"label": "Key"
+			}
+		]
+	}
+}
